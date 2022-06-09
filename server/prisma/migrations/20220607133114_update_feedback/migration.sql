@@ -4,6 +4,15 @@
   - You are about to drop the column `screemshot` on the `Feedback` table. All the data in the column will be lost.
 
 */
+
+-- CreateTable
+CREATE TABLE "Feedback" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "type" TEXT NOT NULL,
+    "comment" TEXT NOT NULL,
+    "screemshot" TEXT
+);
+
 -- RedefineTables
 PRAGMA foreign_keys=OFF;
 CREATE TABLE "new_Feedback" (
