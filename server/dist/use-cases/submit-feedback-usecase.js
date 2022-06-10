@@ -27,7 +27,8 @@ class SubmitFeedback {
             body: [
                 "<div>",
                 `<p>tipo feedback: ${type}</p>`,
-                `<p>comentario:${comment}</p>`,
+                `<p>comentário:${comment}</p>`,
+                screenshot ? `<img src=${screenshot} />` : ``,
                 `</div>`,
             ].join("\n"),
         });

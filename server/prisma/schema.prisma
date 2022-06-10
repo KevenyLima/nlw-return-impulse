@@ -15,5 +15,5 @@ model Feedback {
 
   type       String
   comment    String
-  screemshot String?
+  screenshot String?
 }
