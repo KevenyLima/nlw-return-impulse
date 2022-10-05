@@ -7,4 +7,4 @@ app.use(express.json())
 app.use(route)
 
 // comentário
-app.listen(process.env.PORT|| 3333, () => console.log("server running"));
+app.listen(process.env.PORT|| 3333, () => console.log("server running: ", process.env.PORT));
