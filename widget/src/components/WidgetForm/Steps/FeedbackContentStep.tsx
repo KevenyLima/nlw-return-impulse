@@ -28,11 +28,11 @@ export const FeedbackContentStep = ({
     //   comment,
     // });
     setIsSendingFeedback(true);
-    const formData = new FormData()
-    formData.append('type',feedbackType)
-    formData.append('comment',comment)
-    formData.append('screenshot',screenshot)
-    await api.post("/feedbacks",formData,{Headers:{'Content-Type': 'multipart/form-data'}});
+    await api.post("/feedbacks", {
+      type: feedbackType,
+      comment,
+      screenshot,
+    });
 
     setIsSendingFeedback(false);
     OnSendFeedback();
