@@ -1,11 +1,19 @@
 FROM node
 
 WORKDIR /root/app/
-COPY package.json .
+COPY ./server/package.json .
+COPY ./server/package-lock.json .
 RUN npm i
 
-COPY . .
+COPY ./server/jest.config.ts .
+COPY ./server/tsconfig.json .
+
+COPY ./server .
+COPY ./server/.env .
+
 RUN npm run build
-EXPOSE 3333:80
+
+RUN npx prisma generate
+EXPOSE 80
 CMD [ "npm","start" ]
 
