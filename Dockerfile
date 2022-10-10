@@ -1,4 +1,4 @@
-FROM node
+FROM node:16.3.0-alpine
 
 WORKDIR /root/app/
 COPY ./server/package.json .
