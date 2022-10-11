@@ -1,35 +1,27 @@
-import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
-import React,{ View } from 'react-native';
-import Widget from './src/components/Widget';
-import { theme } from './src/theme';
-
+import { View } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import {
-  useFonts,
-  Inter_400Regular,
-  Inter_500Medium,
+    useFonts
 } from '@expo-google-fonts/inter';
-
+import 'react-native-gesture-handler';
+import Widget from './src/components/Widget';
+import { theme } from './src/theme';
+import './assets/fonts/Inter-Regular.ttf'
 export default function App() {
-  const [fontsLoaded] = useFonts({
-    Inter_400Regular,
-    Inter_500Medium,
-  });
-
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
-
-  return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: theme.colors.background,
-      }}
-    >
-      <StatusBar style="light" backgroundColor="transparent" translucent />
-      <Widget />
-    </View>
-  );
+    return (
+        <View
+            style={{
+                flex: 1,
+                backgroundColor: theme.colors.background,
+            }}
+        >
+            <StatusBar
+                style="light"
+                backgroundColor="transparent"
+                translucent
+            />
+            <Widget />
+        </View>
+    );
 }
